@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&family=Roboto&family=Space+Mono&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ui-black: #000;
+  --ui-white: #F8F0FB;
+  --ui-gray: #CAD5CA;
+  --ui-primary: #6320EE;
+  --ui-primary-light: #8075FF;
+}
+
+a {
+  text-decoration: none;
+}
+
+// Rotate animation
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  50% {
+    scale: 1 1.5;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+#root {
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+  height: auto;
+  background: var(--ui-black);
+  overflow-x: hidden;
+  position: relative;
+}
+
+// Background light effect
+.blob {
+  background: linear-gradient(
+    to right, 
+    aquamarine,
+    mediumpurple,
+  );
+  height: 300px;
+  aspect-ratio: 1;
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  animation: rotate 20s infinite;
+}
+
+.blur {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  backdrop-filter: blur(200px);
+}
+
+input, button, textarea {
+  outline: none;
+  border: none;
+  resize: none;
+}
+
+
+// Sign-in and sign-up
+.sign-in, .sign-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background: var(--ui-white);
+        padding: 20px;
+        width: 400px;
+        min-height: 500px;
+        margin-top: 70px;
+        z-index: 99;
+
+        .form-title {
+            width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid black;
+            margin-block: 20px;
+    }
+
+
+        label {
+        position: relative;
+        margin: 20px;
+        background: transparent;
+        width: 80%;
+        
+        span {
+            position: absolute;
+            top: 7px;
+            left: 12px;
+            font-style: italic;
+            transition: all 0.3s ease-in;
+
+            &.active {
+                font-size: 13px;
+                font-weight: 600;
+                top: -20px;
+                left: 0;
+            }
+        }
+        
+        input {
+            background: transparent;
+            padding: 10px;
+            width: 100%;
+            border-bottom: 1px solid black;
+            transition: all 0.3s ease-in;
+
+            &.active {
+                border: none;
+                border-radius: 5px;
+                background: var(--ui-primary);
+                color: var(--ui-white)
+            }
+        }
+    }
+
+    button {
+      width: 120px;
+      padding: 10px;
+      background-color: var(--ui-primary);
+      color: var(--ui-white);
+      border-radius: 5px;
+      margin-block: 20px;
+      cursor: pointer;
+    }
+
+    .form-footer {
+    text-align: center;
+    span {
+      color: var(--ui-primary);
+      cursor: pointer;
+    }
+    }
+    }
+}
+
+.custom-header {
+        position: absolute;
+        top: 20px;
+        left: 50px;
+        font-family: 'Edu NSW ACT Foundation', cursive;
+        font-size: 30px;
+        font-weight: 600;
+        color: white;
+
+        span {
+          color: var(--ui-primary-light)
+        }
+    }
+
+// Custom scroll bar
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ui-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ui-white);
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ui-white);
+}
