@@ -1,10 +1,11 @@
 import React, {useRef, useEffect} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import './App.scss';
-import Home from './components/Home';
+import Welcome from './components/Welcome';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
-import Welcome from './components/Welcome';
+import Home from './components/Home';
+import './App.scss';
+
 
 function App() {
 
