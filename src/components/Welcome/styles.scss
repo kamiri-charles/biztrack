@@ -102,4 +102,18 @@
             }
         }
     }
+
+    #about {
+        p {
+            padding: 10px 50px;
+            text-indent: 50px;
+
+            span {
+                font-family: 'Edu NSW ACT Foundation', cursive;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--ui-primary);
+            }
+        }
+    }
 }

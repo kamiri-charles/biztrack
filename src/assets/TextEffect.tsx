@@ -43,21 +43,9 @@ const TextEffect: React.FC<TextEffectProps> = ({ text, interval }) => {
       effectInterval = setInterval(applyEffect, interval);
     };
 
-    const stopEffect = () => {
-      clearInterval(effectInterval as NodeJS.Timeout);
-      target.innerText = text;
-      iterations = 0;
-    };
-
     if (isHovered) {
       startEffect();
-    } else {
-      stopEffect();
     }
-
-    return () => {
-      clearInterval(effectInterval as NodeJS.Timeout);
-    };
   }, [text, interval, isHovered]);
 
   return (

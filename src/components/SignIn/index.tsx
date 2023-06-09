@@ -1,16 +1,21 @@
+// TODO: Sign in with Google, Facebook, Twitter, Github, etc.
+// TODO: Add forgot password functionality.
+// TODO: Add remember me functionality.
+// TODO: Add show password functionality.
+
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Typed from "typed.js";
 import { sign_in } from "./sign_in";
 
 interface UserData {
-  username: string;
+  username_or_email: string;
   password: string;
 }
 
 const SignIn: React.FC = () => {
   let [userData, setUserData] = useState<UserData>({
-    username: "",
+    username_or_email: "",
     password: "",
   });
 
@@ -36,16 +41,16 @@ const SignIn: React.FC = () => {
       <form>
         <div className="form-title">Sign in to your account.</div>
         <label>
-          <span className={userData.username === "" ? "" : "active"}>
+          <span className={userData.username_or_email === "" ? "" : "active"}>
             Username / Email address
           </span>
 
           <input
-            className={userData.username === "" ? "" : "active"}
+            className={userData.username_or_email === "" ? "" : "active"}
             type="text"
-            value={userData.username}
+            value={userData.username_or_email}
             onChange={(e) =>
-              setUserData({ ...userData, username: e.target.value })
+              setUserData({ ...userData, username_or_email: e.target.value })
             }
             required
           />
