@@ -1,4 +1,32 @@
 .home {
     height: 100vh;
     color: white;
+    position: relative;
+
+    // Navbar
+    .navbar {
+        width: 100px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        background: var(--ui-white);
+        top: 100px;
+        left: 0;
+        color: var(--ui-primary);
+
+        .nav-item {
+            cursor: pointer;
+
+            i {
+                font-size: 30px;
+            }
+
+            span {
+                font-size: 24px;
+            }
+        }
+    }
 }

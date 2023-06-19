@@ -4,6 +4,7 @@ import Welcome from './components/Welcome';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Home from './components/Home';
+import "boxicons/css/boxicons.min.css";
 import './App.scss';
 
 
