@@ -1,6 +1,13 @@
 // TODO: Sign in function
 
-export const sign_in = (credentials: any) => {
+import { NavigateFunction } from "react-router-dom";
+
+interface credentials {
+  username_or_email: string;
+  password: string;
+}
+
+export const sign_in = (credentials: credentials, nav: NavigateFunction ) => {
   fetch("http://localhost:8080/api/sign-in", {
     method: "POST",
     headers: {
@@ -9,5 +16,12 @@ export const sign_in = (credentials: any) => {
     body: JSON.stringify(credentials),
   })
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((data) => {
+      if (data.error) {
+        alert(data.error);
+      } else {
+        localStorage.setItem("user", data);
+        nav("/home");
+      }
+    });
 };

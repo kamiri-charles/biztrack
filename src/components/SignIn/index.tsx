@@ -1,13 +1,11 @@
-// TODO: Sign in with Google, Facebook, Twitter, Github, etc.
 // TODO: Add forgot password functionality.
 // TODO: Add remember me functionality.
 // TODO: Add show password functionality.
 
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Typed from "typed.js";
 import { sign_in } from "./sign_in";
-
 interface UserData {
   username_or_email: string;
   password: string;
@@ -19,6 +17,7 @@ const SignIn: React.FC = () => {
     password: "",
   });
 
+  let nav = useNavigate();
   const el = useRef(null);
 
   useEffect(() => {
@@ -75,7 +74,7 @@ const SignIn: React.FC = () => {
           type="submit"
           onClick={(e) => {
             e.preventDefault();
-            sign_in(userData);
+            sign_in(userData, nav);
           }}
         >
           Log In
