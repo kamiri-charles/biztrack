@@ -1,7 +1,3 @@
-// TODO: Add forgot password functionality.
-// TODO: Add remember me functionality.
-// TODO: Add show password functionality.
-
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Typed from "typed.js";
@@ -16,6 +12,8 @@ const SignIn: React.FC = () => {
     username_or_email: "",
     password: "",
   });
+
+  let [showPassword, setShowPassword] = useState<boolean>(false);
 
   let nav = useNavigate();
   const el = useRef(null);
@@ -61,13 +59,18 @@ const SignIn: React.FC = () => {
 
           <input
             className={userData.password === "" ? "" : "active"}
-            type="password"
+            type={showPassword ? "text" : "password"}
             value={userData.password}
             onChange={(e) =>
               setUserData({ ...userData, password: e.target.value })
             }
             required
           />
+
+          <i 
+            className={showPassword ? "bx bx-hide show-password" : "bx bx-show show-password"}
+            onClick={() => setShowPassword(!showPassword)}
+          ></i>
         </label>
 
         <button

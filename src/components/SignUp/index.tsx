@@ -19,6 +19,8 @@ const SignUp: React.FC = () => {
     password: "",
   });
 
+  let [showPassword, setShowPassword] = useState<boolean>(false);
+
   const el = useRef(null);
 
   useEffect(() => {
@@ -110,14 +112,20 @@ const SignUp: React.FC = () => {
 
           <input
             className={userData.password === "" ? "" : "active"}
-            type="password"
+            type={showPassword ? "text" : "password"}
             value={userData.password}
             onChange={(e) =>
               setUserData({ ...userData, password: e.target.value })
             }
             required
           />
+
+          <i
+            className={showPassword ? "bx bx-hide show-password" : "bx bx-show show-password"}
+            onClick={() => setShowPassword(!showPassword)}
+          ></i>
         </label>
+
 
         <button type="submit">Create Account</button>
 

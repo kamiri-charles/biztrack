@@ -102,7 +102,7 @@ input, button, textarea {
     }
 
 
-        label {
+    label {
         position: relative;
         margin: 20px;
         background: transparent;
@@ -136,6 +136,20 @@ input, button, textarea {
                 background: var(--ui-primary);
                 color: var(--ui-white)
             }
+        }
+
+        .show-password {
+            position: absolute;
+            top: 7px;
+            right: 12px;
+            font-size: 20px;
+            transition: all 0.3s ease-in;
+            cursor: pointer;
+        }
+
+        // If input is active show password icon should be white
+        input.active ~ .show-password {
+            color: var(--ui-white);
         }
     }
 
