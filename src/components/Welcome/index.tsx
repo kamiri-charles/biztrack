@@ -6,8 +6,9 @@ import FAQ from "./FAQ";
 import Contact from "./Contact";
 import "./styles.scss";
 
-const Welcome: React.FC = () => {
 
+// TODO: Landing header should have a dark background on scroll
+const Welcome: React.FC = () => {
   return (
     <div className="welcome">
       <div className="landing-header">

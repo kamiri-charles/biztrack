@@ -2,35 +2,48 @@ import React from "react";
 
 const FAQ: React.FC = () => {
 
-  let faq_data = [
+  let [faq_data, setFaqData] = React.useState([
     {
       question: "What is BizTrack?",
       answer:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, unde!",
-      answer_open: false,
+      open: false,
     },
 
     {
       question: "What is BizTrack?",
       answer:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, unde!",
-      answer_open: false,
+      open: false,
     },
 
     {
       question: "What is BizTrack?",
       answer:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, unde!",
-      answer_open: false,
+      open: false,
     },
 
     {
       question: "What is BizTrack?",
       answer:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, unde!",
-      answer_open: false,
-    },
-  ];
+      open: false,
+    }
+  ]);
+
+  let toggleQuestion = (index: number) => {
+    setFaqData(
+      faq_data.map((q, i) => {
+        if (i === index) {
+          q.open = !q.open;
+        } else {
+          q.open = false;
+        }
+        return q;
+      })
+    );
+  }
 
 
   return (
@@ -40,10 +53,14 @@ const FAQ: React.FC = () => {
       <div className="questions">
         <div className="q-wrapper">
           {faq_data.map((q, i) => (
-            <div className="question" key={i}>
+            <div
+              className={q.open ? "question open" : "question"}
+              key={i}
+              onClick={() => toggleQuestion(i)}
+            >
               <span>{q.question}</span>
 
-              <i className="bx bx-caret-down"></i>
+              <i className="bx bx-chevron-down"></i>
 
               <div className="answer">
                 <p>{q.answer}</p>

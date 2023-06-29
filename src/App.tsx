@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <div className="blob" ref={blob_el}></div>
       <div className="blur"></div>
-      <Router basename="biztrack">
+      <Router>
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/home" element={<Home />} />
