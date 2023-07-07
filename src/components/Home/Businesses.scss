@@ -55,14 +55,14 @@
                     text-align: center;
                     display: grid;
                     place-items: center;
-                    border: 1px solid black;
+                    border: 1px solid var(--ui-primary);
                     cursor: pointer;
                     transition: all 0.3s ease;
 
                     &:hover {
-                        background: var(--ui-primary);
+                        background: var(--ui-secondary);
                         color: white;
-                        border: 1px solid var(--ui-primary);
+                        border: 1px solid var(--ui-secondary);
                     }
                 }
             }

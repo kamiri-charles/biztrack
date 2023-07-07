@@ -29,6 +29,20 @@ const FAQ: React.FC = () => {
       answer:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, unde!",
       open: false,
+    },
+
+    {
+      question: "What is BizTrack?",
+      answer:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, unde!",
+      open: false,
+    },
+
+    {
+      question: "What is BizTrack?",
+      answer:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, unde!",
+      open: false,
     }
   ]);
 
@@ -48,7 +62,7 @@ const FAQ: React.FC = () => {
 
   return (
     <div className="section" id="faq">
-      <div className="section-title">FAQ</div>
+      <div className="section-title">Frequently Asked Questions</div>
 
       <div className="questions">
         <div className="q-wrapper">

@@ -1,5 +1,3 @@
-// TODO: Sign in function
-
 import { NavigateFunction } from "react-router-dom";
 
 interface credentials {
